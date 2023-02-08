@@ -15,7 +15,7 @@
   border: 1px solid #5c715e;
 }
 .border {
-  background-color: lightblue;
+ background: linear-gradient(68.3deg, rgb(23, 41, 77) 6.3%, rgb(243, 113, 154) 90.9%);
   width: 900px;
   height: 700px;
   background-position: center;
