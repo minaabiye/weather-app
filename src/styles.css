@@ -1,0 +1,119 @@
+.outer {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border-radius: 20px;
+  display: block;
+  margin: 8px;
+  border-color: #5c715e;
+}
+
+.border {
+  width: 900px;
+  height: 700px;
+  padding: 50px;
+  border: 1px solid #5c715e;
+}
+.border {
+  background-image: url("src/floorrain.jpg");
+  width: 900px;
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+img {
+  width: 900px;
+  height: 700px;
+  object-fit: cover;
+}
+
+.dark-rain {
+  position: relative;
+  top: 38%;
+  left: 35%;
+  width: 100%;
+  font-size: 50px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.degree {
+  text-align: center;
+  font-size: 30px;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.top {
+  padding-top: 1em;
+  font-size: 15px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.class-group {
+  height: 10rem;
+  width: auto;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.rainy {
+  text-align: center;
+  display: block;
+  top: 50%;
+  right: 50%;
+  width: 100%;
+  font-size: 30px;
+}
+
+.flake {
+  text-align: center;
+  display: block;
+  top: 50%;
+  right: 50%;
+  width: 100%;
+  font-size: 30px;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 5px;
+}
+
+.bottom {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  position: relative;
+  top: -80px;
+  color: white;
+  font-size: 15px;
+}
+
+#celsius {
+  color: white;
+}
+
+#fahrenheit {
+  color: white;
+}
