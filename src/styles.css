@@ -102,18 +102,4 @@ sup {
   padding: 10px;
 }
 
-footer {
-  text-align: center;
-  position: relative;
-  top: -80px;
-  color: white;
-  font-size: 15px;
-}
 
-#celsius {
-  color: white;
-}
-
-#fahrenheit {
-  color: white;
-}
