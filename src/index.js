@@ -39,11 +39,9 @@ function convertFahrenheit() {
   let mainDegree = document.querySelector("#main-degree");
   mainDegree.innerHTML = "37°F";
 }
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", convertCelsius);
 
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", convertFahrenheit);
+
+
 
 function showTemperature(event) {
   let apikey = "d3622e23c8936f0a71e3faa8f59251d0";
@@ -64,10 +62,6 @@ function show(response) {
   des.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = response.data.wind.speed;
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
 }
 
 let form = document.querySelector("form");
