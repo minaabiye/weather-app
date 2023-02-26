@@ -55,14 +55,18 @@ function show(response) {
   let temp = document.querySelector("#main-degree");
   let humidity = document.querySelector("#hum");
   let wind = document.querySelector("#wind");
+  let minTemp = document.querySelector("#main-min");
+  let maxTemp = document.querySelector("#main-max");
   let temperature = Math.round(response.data.main.temp);
   let city = document.querySelector("h1");
   city.innerHTML = response.data.name;
-  temp.innerHTML = temperature;
+  minTemp.innerHTML = Math.round(response.data.main.temp_min);
+  maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   des.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = response.data.wind.speed;
 }
+
 
 let form = document.querySelector("form");
 form.addEventListener("submit", showTemperature);
