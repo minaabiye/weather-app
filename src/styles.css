@@ -1,25 +1,24 @@
 .outer {
   margin: auto;
-  width: 50%;
-  padding: 10px;
+  width: 100%;
+  padding: 100px;
   border-radius: 20px;
   display: block;
-  margin: 8px;
-  border-color: #5c715e;
+  background: purple;
 }
 
 .border {
-  width: 900px;
-  height: 700px;
-  padding: 50px;
-  border: 1px solid #5c715e;
-}
-.border {
- background: #A5DAE8;
-  width: 900px;
+ background-color: #A5DAE8;
+  width: 700px;
   height: 700px;
   background-position: center;
   background-size: cover;
+  text-align: center;
+  width: 900px;
+  height: 700px;
+  padding: 50px;
+  border: 1px solid;
+  box-sizing: border-box;
 }
 .center {
   margin: auto;
@@ -110,4 +109,9 @@ sup {
 #main-icon{
   width: 150px;
   height: 150px;
+}
+
+.content-wrapper {
+  display: inline-block;
+  vertical-align: middle;
 }
