@@ -103,3 +103,11 @@ sup {
 }
 
 
+.icon{
+  width: 32px;
+  height: 32px;
+}
+#main-icon{
+  width: 150px;
+  height: 150px;
+}

@@ -1,3 +1,4 @@
+
 let now = new Date();
 
 let h3 = document.querySelector("#time");
@@ -40,8 +41,52 @@ function convertFahrenheit() {
   mainDegree.innerHTML = "37°F";
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  return days[day];
+}
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="card col">
+          <div class="weather-forecast-temp">
+            <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
+            <img width="32" class="icon" src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"></img>
+            <p>
+              <span id="main-min">${Math.round(forecastDay.temp.min)}</span>°
+              <strong> <span id="main-max">${Math.round(
+                forecastDay.temp.max
+              )}</span>° </strong>
+            </p>
+          </div>
+        </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "2ff29bed3181c3526c35cc5408037f85";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function showTemperature(event) {
   let apikey = "d3622e23c8936f0a71e3faa8f59251d0";
@@ -59,14 +104,19 @@ function show(response) {
   let maxTemp = document.querySelector("#main-max");
   let temperature = Math.round(response.data.main.temp);
   let city = document.querySelector("h1");
+  let icon = document.querySelector("#main-icon");
   city.innerHTML = response.data.name;
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   des.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = response.data.wind.speed;
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  getForecast(response.data.coord);
 }
-
 
 let form = document.querySelector("form");
 form.addEventListener("submit", showTemperature);
