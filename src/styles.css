@@ -1,15 +1,14 @@
 .outer {
   margin: auto;
-  width: 110%;
+  width: 100%;
   padding: 100px;
   display: block;
   justify-content: center; 
   align-items: center; 
-  background: #b5c2c7 ;
+  background-color: #b5c2c7 ;
   position: relative;
-  top: 50%;
   left: 50%;
-  bottom: 70%;
+  
 }
 
 .border {
@@ -22,6 +21,7 @@
   border: 1px solid;
   box-sizing: border-box;
   margin: auto;
+
 }
 .center {
   margin: auto;
@@ -123,12 +123,20 @@ sup {
 .center-b {
   display: inline-block;
   vertical-align: middle;
-  text-align: center;
+  background-color: #b5c2c7;
 }
 
 .footer {
   position: relative;
-  top: 50%;
-  left: 50%;
-  bottom: 70%;
+  bottom: 80%;
+  left: 65%;
+  background-color:  #b5c2c7;;
+}
+
+.background {
+  background-color: #b5c2c7;
+}
+
+body {
+  background-color: #b5c2c7;;
 }
