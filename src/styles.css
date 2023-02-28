@@ -1,24 +1,27 @@
 .outer {
   margin: auto;
-  width: 100%;
+  width: 110%;
   padding: 100px;
-  border-radius: 20px;
   display: block;
-  background: purple;
+  justify-content: center; 
+  align-items: center; 
+  background: #b5c2c7 ;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  bottom: 70%;
 }
 
 .border {
- background-color: #A5DAE8;
-  width: 700px;
+ background-color: #dfdbd8;
+  width: 800px;
   height: 700px;
-  background-position: center;
-  background-size: cover;
   text-align: center;
-  width: 900px;
-  height: 700px;
-  padding: 50px;
+  width: 800px;
+  padding: 90px;
   border: 1px solid;
   box-sizing: border-box;
+  margin: auto;
 }
 .center {
   margin: auto;
@@ -114,4 +117,18 @@ sup {
 .content-wrapper {
   display: inline-block;
   vertical-align: middle;
+  
+}
+
+.center-b {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.footer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  bottom: 70%;
 }
