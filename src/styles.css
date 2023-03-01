@@ -1,14 +1,15 @@
 .outer {
   margin: auto;
-  width: 100%;
+  width: 110%;
   padding: 100px;
   display: block;
   justify-content: center; 
   align-items: center; 
   background-color: #b5c2c7 ;
   position: relative;
+  top: 50%;
   left: 50%;
-  
+  bottom: 70%;
 }
 
 .border {
@@ -123,20 +124,18 @@ sup {
 .center-b {
   display: inline-block;
   vertical-align: middle;
-  background-color: #b5c2c7;
+ 
 }
 
 .footer {
   position: relative;
   bottom: 80%;
   left: 65%;
-  background-color:  #b5c2c7;;
+ 
 }
 
-.background {
-  background-color: #b5c2c7;
-}
-
-body {
-  background-color: #b5c2c7;;
+.units {
+  font-size: 15px;
+ vertical-align: center;
+  color: black
 }

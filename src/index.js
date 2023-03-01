@@ -31,15 +31,9 @@ function searchCity(event) {
 let searchButton = document.querySelector("form");
 searchButton.addEventListener("submit", searchCity);
 
-function convertCelsius() {
-  let mainDegree = document.querySelector("#main-degree");
-  mainDegree.innerHTML = "3°C";
-}
 
-function convertFahrenheit() {
-  let mainDegree = document.querySelector("#main-degree");
-  mainDegree.innerHTML = "37°F";
-}
+
+
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -94,7 +88,6 @@ function showTemperature(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}`;
   axios.get(apiUrl).then(show);
 }
-
 function show(response) {
   let des = document.querySelector("#description");
   let temp = document.querySelector("#main-degree");
@@ -102,9 +95,10 @@ function show(response) {
   let wind = document.querySelector("#wind");
   let minTemp = document.querySelector("#main-min");
   let maxTemp = document.querySelector("#main-max");
-  let temperature = Math.round(response.data.main.temp);
   let city = document.querySelector("h1");
   let icon = document.querySelector("#main-icon");
+  temp.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
   city.innerHTML = response.data.name;
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
@@ -116,7 +110,7 @@ function show(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   getForecast(response.data.coord);
-}
+ }
 
 let form = document.querySelector("form");
 form.addEventListener("submit", showTemperature);
@@ -143,7 +137,7 @@ function currentLocation(event) {
 }
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#main-degree");
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
@@ -155,7 +149,7 @@ function displayCelsiusTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#main-degree");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
